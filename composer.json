@@ -1,0 +1,27 @@
+{
+	"name": "simple-silex-geolocation",
+	"type": "library",
+	"description": "A simple silex geolocation api",
+	"keywords": [
+		"framework", "silex", "rest", "api"
+	],
+	"homepage": "http://github.com/festum/simple-silex-geolocation",
+	"license": "MIT",
+	"authors": [{
+		"name": "Festum Qin",
+		"email": "festum@g.pl"
+	}],
+	"require": {
+        "silex/silex": "~2.0.3",
+		"monolog/monolog": "~1.11",
+		"doctrine/dbal": "~2.5",
+		"nesbot/Carbon": "~1.21",
+		"euskadi31/cors-service-provider": "~1.0",
+		"php-activerecord/php-activerecord": "1.2.0",
+		"guzzlehttp/guzzle": "^6.3"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.1.4",
+		"mockery/mockery": "~0.9.1"
+	}
+}

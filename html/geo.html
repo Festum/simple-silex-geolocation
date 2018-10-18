@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Get Location</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.l2.io/ip.js?var=ip"></script>
+	<script type="">
+	$(function () {
+		$('#ip').text(ip);
+		$('.get').on('click', function(){
+			$.ajax({ url: '/ip',
+				method: 'POST',
+				data: JSON.stringify({ ip: ip }),
+				dataType: 'json',
+			    success: function(res){
+					$('#location').text(res.city+', '+res.country);
+				}
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="main">
+		<p>IP is: <span id="ip"></span></p>
+		<p>Location: <span id="location"></span></p>
+		<button class="get">Get location</button>
+	</div>
+</body>
+</html>
