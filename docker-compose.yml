@@ -8,7 +8,7 @@ services:
     container_name: geo-app
     restart: always
     volumes:
-      - /git/simple-silex-geolocation:/var/www
+      - .:/var/www
     links:
       - db
     ports:
@@ -19,14 +19,14 @@ services:
     image: composer
     container_name: geo-cp
     volumes:
-      - /git/simple-silex-geolocation:/app
+      - .:/app
     command: install
   db:
     image: mysql:5.7
     container_name: geo-db
     restart: always
     volumes:
-      - /git/simple-silex-geolocation/resources/sql:/docker-entrypoint-initdb.d
+      - ./resources/sql:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: my_secret_pw_shh
       MYSQL_DATABASE: test
