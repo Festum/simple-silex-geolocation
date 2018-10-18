@@ -2,7 +2,13 @@
 
 ## Start
 
+Run service by:
 ```
 docker-compose up -d
 ```
-Browse: http://{DOCKER_HOST}/geo.html
+Open browser enter `http://{DOCKER_HOST}/geo.html`
+
+Run test by:
+```
+docker exec -it geo-app vendor/bin/phpunit
+```
